@@ -22,30 +22,29 @@ class Celda{
 }
 
 class Tabla{
-    private [] celdas;
+    private $celdas = array();
 
     public function addCelda($celda){
         $this->celdas[] = $celda;
     }
 
     public function mostrarCeldas(){
-        echo "<table>";
-        for($i = 0; $i < 9; $i++){
-            $celda = $this->celdas[$i]->setNro($i);
-            echo "<td> " . $celda->getNro();
-            for($a = 0; $a < 9 ; $a++){
-                $texto = $this->celdas[$a]->setTexto($a);
-                echo . $texto->getTexto();
-            }
+        for($i = 0; $i < 10; $i++){
+            echo "<table border = 1px solid>";
+            $this->celdas[$i]->setNro($i);
+            echo "<td> " . $this->celdas[$i]->getNro();
+            $this->celdas[$i]->setTexto($i);
+            echo  $this->celdas[$i]->getTexto();
             echo "</td>";
         }
+        echo "</table>";
     }
 
 }
 
-$table;
+$table = new Tabla();
 
-for($o = 0 ; o < 9; o++){
+for($o = 0; $o < 10; $o++){
     $cel = new Celda();
     $table->addCelda($cel);
 }
