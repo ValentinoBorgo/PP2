@@ -5,11 +5,11 @@ class Celda{
     private String $texto;
 
     public function getNro(){
-        return "Celda nro" . $this->nro;
+        return "Celda nro " . $this->nro;
     }
 
     public function getTexto(){
-        return "Texto celda" . $this->texto;
+        return "Texto celda " . $this->texto;
     }
 
     public function setNro($nro){
